@@ -1,0 +1,303 @@
+/*******************************************************************************
+ | template.css ( 主頁面,css )
+ | -----------------------------------------------------------------------------
+ | @package		    CSS
+ | @Maintain:fangshf@gmail.com starts from 2015.03.08
+ | 說明: 
+ | 1) 以 bd_ 開頭，表示主結構
+*******************************************************************************/
+
+
+/**
+| ------------------------------------------------------------------------------
+| 主結構區塊
+| ------------------------------------------------------------------------------
+**/ 
+body { margin: 0 0; }
+
+a
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px; 
+	color: #2F8016;
+	text-decoration:none;
+	/*text-shadow: 1px 1px 1px #000; */
+}
+
+a:hover
+{
+	color:#161616;
+	text-shadow: 1px 1px 1px #ffffff;
+}
+ 
+ 
+
+
+/* 表頭 --------------------------------------------------------------------- */
+#bd_head
+{
+  height: 80px;
+  background-color: #8A812A;
+  background-image:url(img/topbg.png); 
+  background-repeat: repeat-x;
+  background-position: left;   
+}
+
+#bd_logo
+{  
+	vertical-align: middle;
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	height: 65px;
+	clear: both;  
+}
+
+/* 選單位置 ------------------------------------------------------------------*/ 
+#bd_menu
+{
+  background: #5C671D;
+  background: -moz-linear-gradient(top, #88982B, #5C671D);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#88982B), to(#5C671D));
+}
+
+ 
+/* 主內容區塊 ----------------------------------------------------------------*/ 
+#bg_allarea
+{
+  width:940px;
+  margin:0px auto 0px auto;
+  padding:0px 20px 0px 20px;
+}
+
+/* 頁尾 --------------------------------------------------------------------- */
+#bd_footer
+{
+  background: #69431C;
+  height:100px;
+  padding: 20px 20px;
+}
+
+#bg_footarea
+{
+  width:940px;
+  margin:0px auto 0px auto;
+  padding:0px 20px 0px 20px;
+  text-align:center;
+}
+
+#bg_footarea a
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px; 
+	color: #EEEEEE;
+	display:block;
+	outline:0;
+	text-decoration:none;
+	text-shadow: 1px 1px 1px #000;
+}
+
+#bg_footarea a:hover
+{
+	color:#161616;
+	text-shadow: 1px 1px 1px #ffffff;
+}
+ 
+ 
+/**
+| ------------------------------------------------------------------------------
+| 可共用結構區塊
+| ------------------------------------------------------------------------------
+**/ 
+
+/* 表單共用 ----------------------------------------------------------------- */
+form.bd_form label /* label 強迫斷行 */
+{
+  display: block;
+  clear: both;
+}
+
+
+
+/* 顏色、字型、外框 等等 ---------------------------------------------------- */
+form.lbl_online label
+{
+  width:800px;
+  padding: 3px;
+}
+
+.note-gray
+{
+  padding: 2px 2px;
+  margin-bottom: 5px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+  color: #202025;
+}
+
+.font-small2
+{
+  font-size:12px;
+}
+
+
+/* 提示文字 ----------------------------------------------------------------- */
+.tooltip
+{
+  position: absolute;   
+  /* z-index: 9999; */
+  display: block;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  visibility: visible;
+  filter: alpha(opacity=0);
+  opacity: 0
+}
+
+.tooltip.in
+{
+    filter: alpha(opacity=90);
+    opacity: .9
+}
+
+.tooltip.top
+{
+    padding: 5px 0;
+    margin-top: -3px
+}
+
+.tooltip.right
+{
+    padding: 0 5px;
+    margin-left: 3px
+}
+
+.tooltip.bottom
+{
+    padding: 5px 0;
+    margin-top: 3px
+}
+
+.tooltip.left
+{
+    padding: 0 5px;
+    margin-left: -3px
+}
+
+.tooltip-inner
+{
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    /* background-color: #000; */
+    background-color: #f7f7f9;
+   
+    color: #202025;
+    border-radius: 4px
+}
+
+.tooltip-arrow
+{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid
+}
+
+.tooltip.top .tooltip-arrow
+{
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.tooltip.top-left .tooltip-arrow
+{
+    right: 5px;
+    bottom: 0;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.tooltip.top-right .tooltip-arrow
+{
+    bottom: 0;
+    left: 5px;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.tooltip.right .tooltip-arrow
+{
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: #f7f7f9
+}
+
+.tooltip.left .tooltip-arrow
+{
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #000
+}
+
+.tooltip.bottom .tooltip-arrow
+{
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000
+}
+
+.tooltip.bottom-left .tooltip-arrow
+{
+    top: 0;
+    right: 5px;
+    margin-top: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000
+}
+
+.tooltip.bottom-right .tooltip-arrow
+{
+    top: 0;
+    left: 5px;
+    margin-top: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000
+}
+
+
+/* 框線系列 ----------------------------------------------------------------- */
+.mynote
+{
+  border: 5px dotted #eee;
+  border-radius: 4px;
+  padding:10px 10px;
+  margin-bottom:80px;
+}
+
+.mynote header
+{
+  border-bottom: 5px dotted #eee;
+  border-radius: 4px;
+  padding:2px 2px;
+  margin-bottom:10px;
+}

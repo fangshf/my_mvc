@@ -1,0 +1,76 @@
+
+<!-- 資料區塊:bg_all -->
+<div id="bg_allarea">
+
+
+<!-- p id="bd_positon">{_POSTION}</p -->
+<article>
+  <header>
+  <h1>{BG_TITLE}</h1>
+  <p>常見的註冊驗證(SKILLS USED: HTML5、JQuery、AJAX、PHP)</p>
+  </header>
+  
+  <p>
+  
+  <form class="bd_form lbl_online" fc_form="msg">
+  <label>帳號：<input type="text" name="acc" placeholder="請輸入帳號" id="acc" fc_msg="6-16 碼，限 英文、數字 及 _ "  /></label>
+  <label>檢查帳號：<input type="button" id="btnCheck_acc" value="檢查" /></label>
+  <label>密碼：<input type="password" name="pw" placeholder="請輸入密碼" fc_msg="6-16 碼，限 英文、數字" /></label>
+  <label>請確認密碼：<input type="password" name="pw_check" placeholder="請再輸入一次密碼作確認" fc_msg="請再輸入一次密碼作確認" /></label>
+  <label>電子郵件：<input type="email" name="email" fc_msg="請輸入常用信箱" /></label>  
+  <label>連絡電話(室內)：<input type="number" name="tel" fc_msg="純數字" /></label>  
+  <label>連絡電話(手機)：<input type="number" name="mobile" fc_msg="純數字" /></label>
+  <label>驗證碼：<input type="text" name="chk_code" />     更新驗證碼</label>
+  <label><input type="submit" name="送出" /></label>
+  </form>
+  
+  
+  </p>
+</article>
+
+<article class="mynote">
+  <header>
+  <h1>說明</h1>
+  </header>
+  
+  <pre>
+  1) AJAX應用: 帳號檢查, 回傳格式 JSON.
+  2) HTML5 TAG應用 : 新元素type值(email、number)、新屬性(placeholder)及自定屬性(fc_msg)
+  3) JavaScript及jQuery 應用 : focus 事件, 顯示 tooltip, 計算顯示的位置.
+  4) CSS 應用 : 圓角.
+  </pre>
+</article>
+
+<script>
+// demo 用 暫放區
+$(function(){
+  $('#btnCheck_acc').click(function(){
+    var accVal = $('#acc').val();
+    
+    if( accVal == '' )
+    {
+      alert('請輸入帳號!');
+      $('#acc').focus();
+      return true;      
+    }
+    $.ajax({
+      method: "POST",
+      url: "{{G_SITEURL}}usejquery/check_acc_json",
+      data: { acc: accVal },
+      dataType : "json",
+      success :  function( data ){ alert( "OK! " + data.msg ); }
+      
+    })
+    
+  
+  });
+});
+</script>
+
+
+
+
+
+
+
+</div>

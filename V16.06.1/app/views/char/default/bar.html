@@ -1,0 +1,56 @@
+
+<!-- 資料區塊:bg_all -->
+<div id="bg_allarea">
+
+<script src="{{G_SITEURL}}js/fc_char.js"></script>
+
+
+
+<article>
+  <header>
+  <h1>長條圖</h1>
+  <p>Bar Char</p>
+  </header>
+  
+  <p>
+  
+  <canvas width="500" height="380" id="cv_01"></canvas>
+  
+  <script>
+  barChar = new fc_char( 'cv_01' );
+  
+  // 設定背景線條xy間距
+  barChar.set_iXY( 70, 30);
+  
+  // 繪製背景線條
+  barChar.draw_interval();
+  
+  // 繪製X.Y軸 標示 使用JSON 格試
+  $.ajax({
+      method: "GET",
+      url: "{{G_SITEURL}}char/get_bardata",
+      // data: { acc: accVal },
+      dataType : "json",
+      success :  function( data ) {
+        var getBarData = data.data 
+        barChar.draw_x_text( getBarData.xArr, 'center' ) ;
+        barChar.draw_y_text( getBarData.yArr, 'center' ) ;
+        // 根據資料繪制
+        barChar.draw_bar(getBarData);      
+      }                              
+  })
+  
+  
+  
+  </script>
+  
+  
+  </p>
+</article>
+
+
+
+
+
+
+</div>

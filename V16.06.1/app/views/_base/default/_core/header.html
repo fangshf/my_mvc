@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>{SITENAME},{{G_SITENAME}} </title>
+<link rel="icon" type="image/png" href="{{G_SITEURL}}favorite.ico" />
+<link href="{{G_SITEURL}}css/template.css" rel="stylesheet" type="text/css" />
+<link href="{{G_SITEURL}}css/menu.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<script src="{{G_SITEURL}}js/f_canvas.js"></script>
+<script src="{{G_SITEURL}}js/jquery-1.11.2.min.js"></script>
+<script src="{{G_SITEURL}}js/fc_form.js"></script>
+<script>
+
+
+// 自動加載 --------------------------------------------------------------------
+$(function(){
+  $('form[fc_form="msg"] input').focus( function(){ fc_form.show_msg(this); } )
+                                .focusout( function(){ fc_form.hidden_msg(this); } );
+  
+});
+
+</script>
+</head>
+
+<body>
+
+
+<!-- LOGO:bd_logoarea-->
+<div id="bd_head">
+  <div id="bd_logo"></div>
+</div>
